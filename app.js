@@ -3,7 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const PORT = 3000;
+const PORT = process.env.PORT ||  3000;
 // const request = require("request");
 const https = require('https');
 // const API_KEY = process.env.API_KEY;
@@ -12,7 +12,7 @@ const audianceID = "e4e5fe21d9";
  
 app.use(express.static("public"));
  
-app.listen(PORT || process.env.PORT, (req, res) => {
+app.listen(PORT , (req, res) => {
     console.log("App is listening on Port : ", PORT);
 })
  
