@@ -543,3 +543,54 @@
 //     console.log(`Port listened ${port}`); 
 // });
 
+// const express = require("express")
+// const request = require("request")
+// const bodyParser = require("body-parser")
+// const https = require("https")
+// const mailchimp = require("@mailchimp/mailchimp_marketing");
+ 
+// const app = express()
+ 
+// mailchimp.setConfig({
+//     apiKey: "a427329642f43dccbf29ee5c2c2f65c4-us11",
+//     server: "us11"
+//   });
+ 
+// app.use(express.static("public"))
+// app.use(bodyParser.urlencoded({extended: true}))
+ 
+// app.get("/",(req,res) => {
+//     res.sendFile(__dirname + "/signup.html")
+// })
+ 
+// app.post("/",function (req,res) {
+//     const listId = "e4e5fe21d9";
+// const subscribingUser = {
+//     firstName: req.body.firstName,
+//     lastName: req.body.lastName,
+//     email: req.body.email
+// };
+ 
+// async function run() {
+//     const response = await mailchimp.lists.addListMember(listId, {
+//       email_address: subscribingUser.email,
+//       status: "subscribed",
+//       merge_fields: {
+//         FNAME: subscribingUser.firstName,
+//         LNAME: subscribingUser.lastName
+//       }
+//     });
+  
+//     console.log(
+//       `Successfully added contact as an audience member. The contact's id is ${response.id}.`
+//     );
+//   }
+ 
+// run();
+ 
+ 
+// });
+ 
+// app.listen(3000, () => {
+//     console.log("Server is running on port 3000");
+// })
